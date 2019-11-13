@@ -3,13 +3,19 @@
 sudo apt-get update
 sudo apt-get install -y build-essential
 # 2) Install Miniconda3
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh
+# JK 11/13/2019: according to HummingBot, line below hangs, use the previous
+# version
+# wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# sh Miniconda3-latest-Linux-x86_64.sh
+wget https://repo.continuum.io/miniconda/Miniconda3-4.7.10-Linux-x86_64.sh
+sh Miniconda3-4.7.10-Linux-x86_64.sh
 export CONDAPATH="$(pwd)/miniconda3"
 export PYTHON="$(pwd)/miniconda3/envs/hummingbot/bin/python3"
 # INSTALL HUMMINGBOT
 # 3) Clone Hummingbot
-git clone https://github.com/CoinAlpha/hummingbot.git
+# JK 11/13/2019: modify lines below to use my own repo
+# git clone https://github.com/CoinAlpha/hummingbot.git
+git clone https://github.com/jkrugly/hummingbot.git
 # 4) Install Hummingbot
 export hummingbotPath="$(pwd)/hummingbot" && cd $hummingbotPath && ./install
 # 5) Activate environment and compile code
